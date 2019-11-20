@@ -1,8 +1,7 @@
-= Connecting to Gmail
+= Connect to Gmail - Mule 4
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:keywords: email, connector, configuration, imap, gmail, pop3
 
 
 [[short_description]]

@@ -1,9 +1,9 @@
-= Triggering a Flow When a New Email is Received
+= Trigger a Flow When New Email is Received - Mule 4
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
-The Email connector provides a listener (called On New Email in the Studio and
+Email Connector provides a listener (called On New Email in the Studio and
 Design Center UIs) that polls an email folder from a mailbox for all the unread
 emails in it, generating a new message for each email that is found.
 

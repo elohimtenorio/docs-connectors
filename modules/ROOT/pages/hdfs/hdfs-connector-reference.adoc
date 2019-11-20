@@ -1,7 +1,14 @@
-= Hdfs Connector Reference
+= HDFS Connector Reference - Mule 4
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
+
+Support Category: https://www.mulesoft.com/legal/versioning-back-support-policy#anypoint-connectors[Select]
+
+HDFS Connector v6.0
+
+Release Notes: xref:release-notes::connector/hdfs-connector-release-notes-mule-4.adoc[HDFS Connector Release Notes]
+
 
 == Configurations
 ---
@@ -17,7 +24,7 @@ endif::[]
 | Connection a| * <<hdfs_kerberos, Kerberos>>
 * <<hdfs_simple, Simple>>
  | The connection types that can be provided to this configuration. | | x
-| Expiration Policy a| <<ExpirationPolicy>> |  Configures the minimum amount of time that a dynamic configuration instance can remain idle before the runtime considers it eligible for expiration. This does not mean that the platform will expire the instance at the exact moment that it becomes eligible. The runtime will actually purge the instances when it sees it fit. |  |
+| Expiration Policy a| <<ExpirationPolicy>> |  Configures the minimum amount of time that a dynamic configuration instance can remain idle before the runtime considers it eligible for expiration. This does not mean that the platform will expire the instance at the exact moment that it becomes eligible. The runtime will actually purge the instances as it sees  fit. |  |
 |===
 
 ==== Connection Types
@@ -655,20 +662,22 @@ Write the current payload to the designated path, either creating a new file or 
 [[reconnect]]
 === Reconnect
 
-[cols=".^20%,.^25%,.^30%,.^15%,.^10%", options="header"]
+[%header,cols="20s,25a,30a,15a,10a"]
 |===
 | Field | Type | Description | Default Value | Required
-| Frequency a| Number | How often (in ms) to reconnect |  |
-| Count a| Number | How many reconnection attempts to make |  |
+| Frequency a| Number | How often to reconnect (in milliseconds). | |
+| Count a| Number | The number of reconnection attempts to make. | |
+| blocking |Boolean |If false, the reconnection strategy runs in a separate, non-blocking thread. |true |
 |===
 
 [[reconnect-forever]]
 === Reconnect Forever
 
-[cols=".^20%,.^25%,.^30%,.^15%,.^10%", options="header"]
+[%header,cols="20s,25a,30a,15a,10a"]
 |===
 | Field | Type | Description | Default Value | Required
-| Frequency a| Number | How often (in ms) to reconnect |  |
+| Frequency a| Number | How often in milliseconds to reconnect. | |
+| blocking |Boolean |If false, the reconnection strategy runs in a separate, non-blocking thread. |true |
 |===
 
 [[ExpirationPolicy]]
@@ -735,7 +744,7 @@ Write the current payload to the designated path, either creating a new file or 
 |===
 
 [[MetaData]]
-=== Meta Data
+=== Metadata
 
 [cols=".^20%,.^25%,.^30%,.^15%,.^10%", options="header"]
 |===
@@ -790,3 +799,7 @@ Write the current payload to the designated path, either creating a new file or 
 | Permission a| String |  |  |
 | Symbolic Link a| Boolean |  |  |
 |===
+
+= See Also
+
+https://help.mulesoft.com[MuleSoft Help Center]

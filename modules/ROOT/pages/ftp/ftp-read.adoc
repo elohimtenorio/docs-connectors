@@ -1,4 +1,4 @@
-= Read a File Using the FTP Connector
+= Read a File Using the FTP Connector - Mule 4
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
@@ -29,4 +29,4 @@ include::partial$common-file-lock.adoc[]
 
 The Read operation makes use of the repeatable streams functionality introduced in Mule 4. The operation returns a list of messages, where each message represents a file in the list and holds a stream to the file. A stream is repeatable by default.
 
-For more information on this topic, see xref:4.1@mule-runtime::streaming-about.adoc[Streaming in Mule 4].
+For more information on this topic, see xref:4.2@mule-runtime::streaming-about.adoc[Streaming in Mule 4].

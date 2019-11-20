@@ -3,7 +3,7 @@ ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
-The File connector can copy or move files or directories on demand. If you specify the `sourcePath` as a directory name, 
+File Connector can copy or move files or directories on demand. If you specify the `sourcePath` as a directory name, 
 a directory is copied or moved. Otherwise if `sourcePath` is a file, only the file is copied or moved.
 If a file or directory already exists and `overwrite` is `false`, the `FILE:FILE_ALREADY_EXISTS` error occurs.
 
@@ -31,5 +31,4 @@ Notice the `targetPath` and `renameTo` parameters:
 
 == See Also
 
-* https://forums.mulesoft.com[MuleSoft Forum]
-* https://support.mulesoft.com/s/knowledge[Knowledge Base Articles]
+https://help.mulesoft.com[MuleSoft Help Center]

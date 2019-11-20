@@ -1,12 +1,17 @@
-= Database Connector Reference
+= Database Connector Reference - Mule 4
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 :imagesdir: ../../assets/images
 :page-aliases: database/database-documentation.adoc
 
-The Anypoint Database Connector allows you to connect to relational databases through the JDBC API.
+Support Category: https://www.mulesoft.com/legal/versioning-back-support-policy#anypoint-connectors[Select]
 
+Database Connector v1.5
+
+Anypoint Connector for Database (Database Connector) allows you to connect to relational databases through the JDBC API.
+
+Release Notes: xref:release-notes::connector/connector-db.adoc[Database Connector Release Notes]
 
 == Configurations
 ---
@@ -879,8 +884,9 @@ Selects from a table at a regular interval and generates one message per each ob
 [%header,cols="20s,25a,30a,15a,10a"]
 |===
 | Field | Type | Description | Default Value | Required
-| Frequency a| Number | How often in milliseconds to reconnect |  |
-| Count a| Number | How many reconnection attempts to make. |  |
+| Frequency a| Number | How often to reconnect (in milliseconds). | |
+| Count a| Number | The number of reconnection attempts to make. | |
+| blocking |Boolean |If false, the reconnection strategy runs in a separate, non-blocking thread. |true |
 |===
 
 [[reconnect-forever]]
@@ -889,7 +895,8 @@ Selects from a table at a regular interval and generates one message per each ob
 [%header,cols="20s,25a,30a,15a,10a"]
 |===
 | Field | Type | Description | Default Value | Required
-| Frequency a| Number | How often in milliseconds to reconnect |  |
+| Frequency a| Number | How often in milliseconds to reconnect. | |
+| blocking |Boolean |If false, the reconnection strategy runs in a separate, non-blocking thread. |true |
 |===
 
 [[ExpirationPolicy]]
@@ -941,43 +948,44 @@ Selects from a table at a regular interval and generates one message per each ob
 | Field | Type | Description | Default Value | Required
 | Type a| Enumeration, one of:
 
-** BIT
-** TINYINT
-** SMALLINT
-** INTEGER
+** ARRAY
 ** BIGINT
-** FLOAT
-** REAL
-** DOUBLE
-** NUMERIC
-** DECIMAL
+** BINARY
+** BIT
+** BLOB
+** BOOLEAN
 ** CHAR
-** VARCHAR
-** LONGVARCHAR
+** CLOB
+** DATALINK
 ** DATE
+** DECIMAL
+** DISTINCT
+** DOUBLE
+** FLOAT
+** INTEGER
+** JAVA_OBJECT
+** LONGNVARCHAR
+** LONGVARBINARY
+** LONGVARCHAR
+** NCHAR
+** NCLOB
+** NULL
+** NUMERIC
+** NVARCHAR
+** OTHER
+** REAL
+** REF
+** ROWID
+** SMALLINT
+** SQLXML
+** STRUCT
 ** TIME
 ** TIMESTAMP
-** BINARY
+** TINYINT
+** UNKNOWN 
 ** VARBINARY
-** LONGVARBINARY
-** NULL
-** OTHER
-** JAVA_OBJECT
-** DISTINCT
-** STRUCT
-** ARRAY
-** BLOB
-** CLOB
-** REF
-** DATALINK
-** BOOLEAN
-** ROWID
-** NCHAR
-** NVARCHAR
-** LONGNVARCHAR
-** NCLOB
-** SQLXML
-** UNKNOWN |  |  |
+** VARCHAR
+|  |  |
 | Custom Type a| String |  |  |
 |===
 
@@ -1027,3 +1035,6 @@ Selects from a table at a regular interval and generates one message per each ob
 | Type Classifier a| <<TypeClassifier>> |  |  | x
 |===
 
+== See Also
+
+https://help.mulesoft.com[MuleSoft Help Center]

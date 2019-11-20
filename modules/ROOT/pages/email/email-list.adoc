@@ -1,9 +1,9 @@
-= Listing Emails with the Email Connector
+= List Emails with the Email Connector - Mule 4
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
-The Email connector can list emails from any part of the flow. (Note that this capability is a change from the Mule 3 transport, which could only retrieve emails as a result of inbound endpoint polling.)
+Email Connector can list emails from any part of the flow. (Note that this capability is a change from the Mule 3 transport, which could only retrieve emails as a result of inbound endpoint polling.)
 
 Both the POP3 and IMAP configurations contain a `list` operation. This section covers both and explains their differences. Though the examples below might use `list-pop3` or `list-imap`, all of them apply to both configurations _unless stated otherwise_.
 
@@ -12,7 +12,7 @@ Both the POP3 and IMAP configurations contain a `list` operation. This section c
 There are two configurations for listing emails that are stored in a server:
 
 * POP3 configuration
-* IMAP configuration.
+* IMAP configuration
 
 Both share a basic set of the parameters that are required to establish a connection: the server `host` and `port`, and the `username` and `password` to connect with a protected mail server. Note that `username` and `password` are optional because some servers are not be secured with a username and password.
 

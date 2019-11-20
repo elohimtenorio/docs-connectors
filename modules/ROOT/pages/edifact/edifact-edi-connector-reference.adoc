@@ -1,7 +1,16 @@
-= EDIFACT EDI Connector Reference
+= EDIFACT EDI Connector Reference - Mule 4
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
+
+Support Category: https://www.mulesoft.com/legal/versioning-back-support-policy#anypoint-connectors[Premium]
+
+EDIFACT EDI Connector v2.0
+
+Anypoint Connector for EDIFACT EDI (EDIFACT Connector) lets you convert EDIFACT messages to and from
+DataWeave-compatible representations using lists and maps. This connector supports EDIFACT versions D.93A, D.95B, D.96A, D.97A, D.98B, D.99A, D.99B, D.00A, D.01B, D.02A, D.03A with supplied schema definitions for all standard messages.
+
+Release Notes: xref:release-notes::connector/edifact-edi-connector-release-notes.adoc[EDIFACT EDI Connector Release Notes]
 
 == Default Configuration
 
@@ -211,5 +220,4 @@ Transform maps and lists structure of EDI data to EDI text stream.
 
 == See Also
 
-* https://forums.mulesoft.com[MuleSoft Forum]
-* https://support.mulesoft.com/s/knowledge[Knowledge Base Articles]
+https://help.mulesoft.com[MuleSoft Help Center]

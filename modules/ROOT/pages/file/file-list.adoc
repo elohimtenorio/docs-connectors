@@ -1,4 +1,4 @@
-= To List Files Using the File Connector
+= List Files Using the File Connector - Mule 4
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]

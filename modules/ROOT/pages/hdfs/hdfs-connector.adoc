@@ -1,21 +1,24 @@
-= HDFS Connector
+= HDFS Connector - Mule 4
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:keywords: anypoint studio, connectors, hdfs
 
-_Select_
+Support Category: https://www.mulesoft.com/legal/versioning-back-support-policy#anypoint-connectors[Select]
 
-The Anypoint Connector for the Hadoop Distributed File System (HDFS) is used as a bi-directional gateway between Mule applications and HDFS.
+HDFS Connector v6.0
+
+Anypoint Connector for the Hadoop Distributed File System (HDFS) (HDFS Connector) is used as a bidirectional gateway between Mule apps and HDFS.
+
+Release Notes: xref:release-notes::connector/hdfs-connector-release-notes-mule-4.adoc[HDFS Connector Release Notes]
 
 == Prerequisites
 
-This document assumes that you are familiar with Mule.
+This document assumes that you are familiar with Mule and HDFS.
 
 To use the HDFS connector, you need:
 
-* Anypoint Studio version 7.0 or above - An instance of Anypoint Studio. If you do not use Anypoint Studio for development.
-* An instance of Hadoop Distributed File System  up and running.
+* Anypoint Studio version 7.0 or later
+* An instance of Hadoop Distributed File System up and running.
 
 == Compatibility
 
@@ -24,18 +27,31 @@ HDFS Hadoop connector is compatible with the following:
 [%header,width="100%",cols="50%,50%"]
 |===
 |Application/Service|Version
-|Mule Runtime |4.0 or newer
+|Mule  |4.0 or newer
 |Apache Hadoop |2.8.1 or newer
 |===
 
-== Install the Connector
+== Add the Connector to a Studio Project
 
-. In Anypoint Studio, click the Exchange icon in the Studio taskbar.
-. Click Login in Anypoint Exchange.
-. Search for the connector and click Install.
+Anypoint Studio provides two ways to add the connector to your Studio project: from the Exchange button in the Studio taskbar or from the Mule Palette view.
+
+=== Add the Connector Using Exchange
+
+. In Studio, create a Mule project.
+. Click the Exchange icon *(X)* in the upper-left of the Studio task bar.
+. In Exchange, click *Login* and supply your Anypoint Platform username and password.
+. In Exchange, search for "hdfs".
+. Select the connector and click *Add to project*.
 . Follow the prompts to install the connector.
 
-When Studio has an update, a message displays in the lower right corner, which you can click to install the update.
+=== Add the Connector in Studio
+
+. In Studio, create a Mule project.
+. In the Mule Palette view, click *(X) Search in Exchange*.
+. In *Add Modules to Project*, type "hdfs" in the search field.
+. Click this connector's name in *Available modules*.
+. Click *Add*.
+. Click *Finish*.
 
 == Configure the Connector Global Element
 
@@ -91,7 +107,7 @@ Namespace: `+http://www.mulesoft.org/schema/mule/hdfs+` +
 Schema Location: `+http://www.mulesoft.org/schema/mule/connector/current/mule-hdfs.xsd+`
 
 
-If you are manually coding the Mule application in Studio's XML editor or other text editor, define the namespace and schema location in the header of your Configuration XML, inside the `<mule>` tag.
+If you are manually coding the Mule app in Studio's XML editor or another text editor, define the namespace and schema location in the header of your Configuration XML, inside the `<mule>` tag.
 
 [source,xml,linenums]
 ----
@@ -110,6 +126,20 @@ If you are manually coding the Mule application in Studio's XML editor or other 
 </mule>
 ----
 
+Also ensure your POM file has this dependency:
+
+[source,xml,linenums]
+----
+<dependency>
+  <groupId>org.mule.connectors</groupId>
+  <artifactId>mule-hdfs-connector</artifactId>
+  <version>RELEASE</version>
+  <classifier>mule-plugin</classifier>
+</dependency>
+----
+
+Mule converts RELEASE to the latest version.
+
 === Example Use Case
 
 The following example shows how to create a text file into HDFS using the connector:
@@ -118,16 +148,12 @@ The following example shows how to create a text file into HDFS using the connec
 . In the search field, type "http" and drag the HTTP connector to the canvas, click the green plus sign to the right of Connector Configuration, and in the next screen, click OK to accept the default settings. Name the endpoint /createFile.
 . In the Search bar type hdfs and drag the HDFS connector onto the canvas.
 . Choose Write to path as an operation. Set Path to `/test.txt` (this is the path of the file that is going to be created into HDFS) and leave other options with default values.
-. The flow should look like this:
-+
-// image:<missing>hdfs-create-file-flow.png[Create file flow]
-+
 . Run the application. From your favorite HTTP client, make a POST request with "Content-type:plain/text" to `+locahost:8081/createFile+` with content that you want to write as payload. (for example, `curl -X POST -H "Content-Type:plain/text" -d "payload to write to file" localhost:8090/createFile`)
 . Check that /test.txt has been created and has your content by using Hadoop explorer.
 
-A demo with the above mentioned use case was provided.
 
 == Resources
 
 * http://hadoop.apache.org/releases.html[Hadoop Distributed File System download]
 * https://web.mit.edu/kerberos/krb5-1.12/doc/basic/keytab_def.html[keytab file]
+* https://help.mulesoft.com[MuleSoft Help Center]

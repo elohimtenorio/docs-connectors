@@ -1,12 +1,17 @@
-= EDIFACT EDI Connector
+= EDIFACT EDI Connector - Mule 4
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
+:imagesdir: ../../assets/images/
 
-_Premium_
+Support Category: https://www.mulesoft.com/legal/versioning-back-support-policy#anypoint-connectors[Premium]
 
-The EDIFACT EDI connector lets you convert EDIFACT messages to and from
+EDIFACT EDI Connector v2.0
+
+Anypoint Connector for EDIFACT EDI (EDIFACT Connector) lets you convert EDIFACT messages to and from
 DataWeave-compatible representations using lists and maps. This connector supports EDIFACT versions D.93A, D.95B, D.96A, D.97A, D.98B, D.99A, D.99B, D.00A, D.01B, D.02A, D.03A with supplied schema definitions for all standard messages.
+
+Release Notes: xref:release-notes::connector/edifact-edi-connector-release-notes.adoc[EDIFACT EDI Connector Release Notes]
 
 == Prerequisites
 
@@ -33,14 +38,27 @@ EDIFACT EDI connector 2.x makes several changes to the configuration and handlin
 
 * The undocumented "default" schema configuration for EDIFACT EDI connector 1.x is now officially supported by EDIFACT EDI connector 2.x. If no schemas are referenced in the configuration, the standard version of the schema for each message is looked up from the classpath and used for reading and writing. When this is done, no metadata is available for the message data structure, since the actual messages are unknown at design time.
 
-== To Install this Connector in Anypoint Studio 7
+== Add the Connector to a Studio Project
 
-. In Anypoint Studio, click the Exchange icon in the Studio task bar.
-. Click Login in Anypoint Exchange.
-. Search for the connector and click Install.
+Anypoint Studio provides two ways to add the connector to your Studio project: from the Exchange button in the Studio taskbar or from the Mule Palette view.
+
+=== Add the Connector Using Exchange
+
+. In Studio, create a Mule project.
+. Click the Exchange icon *(X)* in the upper-left of the Studio task bar.
+. In Exchange, click *Login* and supply your Anypoint Platform username and password.
+. In Exchange, search for "edifact".
+. Select the connector and click *Add to project*.
 . Follow the prompts to install the connector.
 
-When Studio has an update, a message displays in the lower right corner, which you can click to install the update.
+=== Add the Connector in Studio
+
+. In Studio, create a Mule project.
+. In the Mule Palette view, click *(X) Search in Exchange*.
+. In *Add Modules to Project*, type "edifact" in the search field.
+. Click this connector's name in *Available modules*.
+. Click *Add*.
+. Click *Finish*.
 
 You must change the default Anypoint configuration to use the EDIFACT EDI connector 2.0.0.
 
@@ -514,7 +532,5 @@ The generated functional acknowledgments have interchange data set up for sendin
 
 == See Also
 
-* xref:release-notes::connector/edifact-edi-connector-release-notes.adoc[EDIFACT EDI Connector Release Notes].
-* xref:1.0@partner-manager::edi-schema-language-reference.adoc[EDI Schema Language Reference].
-* https://forums.mulesoft.com[MuleSoft Forum].
-* https://support.mulesoft.com[Contact MuleSoft Support].
+* xref:1.0@partner-manager::edi-schema-language-reference.adoc[EDI Schema Language Reference]
+* https://help.mulesoft.com[MuleSoft Help Center]

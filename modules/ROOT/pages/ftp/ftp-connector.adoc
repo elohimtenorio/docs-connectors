@@ -1,11 +1,15 @@
-= About the FTP Connector
+= FTP Connector - Mule 4
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
+Support Category: https://www.mulesoft.com/legal/versioning-back-support-policy#anypoint-connectors[Select]
+
+FTP Connector v1.4
+
 Release Notes: xref:release-notes::connector/connector-ftp.adoc[FTP Connector Release Notes]
 
-This connector provides access to files and folders on an FTP server. Its main features include:
+Anypoint Connector for FTP (FTP Connector) provides access to files and folders on an FTP server. Its main features include:
 
 * The ability to read files or fully list directory contents on demand.
 * Support for common FTP operations such as creating directories and copying, moving, renaming, and deleting files.
@@ -21,12 +25,33 @@ You set up a connection through an `ftp:config` element, for example:
 [source,xml,linenums]
 ----
 <ftp:config name="ftp">
-  <ftp:connection username="anonymous" password="password" host="localhost" port="${ftpPort}" workingDir="${workingDir}"/>
+  <ftp:connection 
+    username="anonymous" 
+    password="password" 
+    host="localhost" 
+    port="${ftpPort}" 
+    workingDir="${workingDir}"/>
 </ftp:config>
 ----
 
 The `workingDir` provides the path to a directory that is treated as the root of every relative path used with this connector. If the directory is not provided, the remote server’s default serves as the working directory.
 The `username`, `password`, `host`, and `port` attributes are self explanatory.
+
+== FTP POM File Setting
+
+Ensure that your project POM file contains this dependency:
+
+[source,xml,linenums]
+----
+<dependency>
+  <groupId>org.mule.connectors</groupId>
+  <artifactId>mule-ftp-connector</artifactId>
+  <version>RELEASE</version>
+  <classifier>mule-plugin</classifier>
+</dependency>
+----
+
+Mule converts RELEASE to the latest version.
 
 == Dynamic FTP Connections
 
@@ -142,3 +167,4 @@ The Mule message contains the concepts of encoding and MIME type. These are used
 * xref:ftp/ftp-list.adoc[List Files]
 * xref:ftp/ftp-on-new-file.adoc[Listen for New or Modified Files]
 * xref:ftp/ftp-copy-move.adoc[Copy or Move Files]
+* https://help.mulesoft.com[MuleSoft Help Center]

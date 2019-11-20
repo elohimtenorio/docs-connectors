@@ -1,19 +1,18 @@
-= HL7 EDI Connector
+= HL7 EDI Connector - Mule 4
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
-Support Category: Premium
+Support Category: https://www.mulesoft.com/legal/versioning-back-support-policy#anypoint-connectors[Premium]
 
-The Anypoint Connector for HL7 EDI (HL7 EDI Connector) lets you convert HL7 ER7 messages to and from DataWeave-compatible representations using lists and maps.
+Anypoint Connector for HL7 EDI (HL7 EDI Connector) lets you convert HL7 ER7 messages to and from DataWeave-compatible representations using lists and maps.
+
+Release Notes: xref:release-notes::connector/hl7-connector-release-notes-mule-4.adoc[HL7 EDI Connector Release Notes]
 
 == Prerequisites
 
 This document assumes that you are familiar with HL7, Mule, Anypoint
 Connectors, Anypoint Studio, Mule flows, and Mule Global Elements.
-
-See the Release Notes for compatibility information. A link to the
-release notes is listed in the See Also section of this document.
 
 You must purchase a license for the HL7 EDI Connector to use it in a production environment.
 
@@ -40,14 +39,29 @@ segment or position within the segment.
 
 The HL7 EDI Connector 4.0 is not supported for use in Design Center.
 
-== Install this Connector in Anypoint Studio 7
+== Add the Connector to a Studio Project
 
-. In Anypoint Studio, click the Exchange icon in the Studio task bar.
-. Click Login in Anypoint Exchange.
-. Search for the connector and click Install.
+Anypoint Studio provides two ways to add the connector to your Studio project: from the Exchange button in the Studio taskbar or from the Mule Palette view.
+
+=== Add the Connector Using Exchange
+
+. In Studio, create a Mule project.
+. Click the Exchange icon *(X)* in the upper-left of the Studio task bar.
+. In Exchange, click *Login* and supply your Anypoint Platform username and password.
+. In Exchange, search for "HL7".
+. Select the connector and click *Add to project*.
 . Follow the prompts to install the connector.
 
-When Studio has an update, a message displays in the lower right corner, which you can click to install the update.
+=== Add the Connector in Studio
+
+. In Studio, create a Mule project.
+. In the Mule Palette view, click *(X) Search in Exchange*.
+. In *Add Modules to Project*, type "HL7" in the search field.
+. Click this connector's name in *Available modules*.
+. Click *Add*.
+. Click *Finish*.
+
+== Increase Studio Memory
 
 You must change the default Anypoint configuration to use the HL7 EDI Connector 4.0.0.
 
@@ -88,8 +102,6 @@ field lengths and repetition counts are not enforced.
 See the HL7 Schema List for details of the message structures
 schema definitions supplied with the connector.
 
-// (Listed in the See Also section of this document.)
-
 You can customize the HL7 schema definitions to suit your data by
 copying and editing the schema definitions directly or by using a
 console tool to generate a simplified schema based on one or more
@@ -100,7 +112,6 @@ due to the complexity of HL7 definitions.
 You can also define your own schemas from scratch.
 See the EDI Schema Language Reference for more details.
 
-// (Listed in the See Also section of this document.)
 
 [NOTE]
 ====
@@ -693,8 +704,6 @@ If extension segments are used in nested groups, the list containing those segme
 
 == See Also
 
-* xref:hl7/hl7-schemas.adoc[HL7 Supplied Schemas].
-* xref:release-notes::connector/hl7-connector-release-notes.adoc[HL7 EDI Connector Release Notes].
-* https://forums.mulesoft.com[MuleSoft Forum].
-* https://support.mulesoft.com[Contact MuleSoft Support].
-* xref:1.0@partner-manager::edi-schema-language-reference.adoc[EDI Schema Language].
+* xref:hl7/hl7-schemas.adoc[HL7 Supplied Schemas]
+* https://help.mulesoft.com[MuleSoft Help Center]
+* xref:1.0@partner-manager::edi-schema-language-reference.adoc[EDI Schema Language]
